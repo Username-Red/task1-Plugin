@@ -87,9 +87,9 @@ add_action( 'init', 'my_custom_plugin_custom_function' );
  * GRAVITY FORMS AFTER SUBMISSION WEBHOOK
  * =========================
  */
-if ( class_exists( 'GFAPI' ) ) {
-    add_action( 'gform_after_submission', 'my_custom_plugin_send_form_to_webhook', 10, 2 );
-}
+
+add_action( 'gform_after_submission', 'my_custom_plugin_send_form_to_webhook', 10, 2 );
+
 
 function my_custom_plugin_send_form_to_webhook( $entry, $form ) {
 
@@ -120,6 +120,7 @@ function my_custom_plugin_send_form_to_webhook( $entry, $form ) {
     if ( is_wp_error( $response ) ) {
         error_log( 'Webhook failed: ' . $response->get_error_message() );
     } else {
-        error_log( 'Webhook sent successfully.' );
+        error_log( 'Webhook Data: ' . print_r( $data, true ) );
+
     }
 }
