@@ -1,0 +1,31 @@
+/**
+ * My Plugin Styles
+ * Description: Basic styling for front-end display.
+ */
+
+.my-plugin-container {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.my-plugin-container h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.my-plugin-button {
+    background-color: #0073aa;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.my-plugin-button:hover {
+    background-color: #005177;
+}
