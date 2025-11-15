@@ -70,3 +70,31 @@ function my_plugin_enqueue_admin_assets() {
     );
 }
 add_action( 'admin_enqueue_scripts', 'my_plugin_enqueue_admin_assets' );
+
+add_action( 'gform_after_submission', 'send_form_to_webhook', 10, 2 );
+
+function send_form_to_webhook( $entry, $form ) {
+
+    // Convert entry data to an array
+    $data = [];
+
+    foreach ( $form['fields'] as $field ) {
+        $field_id = $field->id;
+        $label = $field->label;
+        $value = rgar( $entry, $field_id );
+
+        $data[$label] = $value;
+    }
+
+    // Webhook URL (replace with yours)
+    $webhook_url = 'https://webhook.site/48db2220-435a-433a-bc19-7dbd9f1cabf2';
+
+    // Send POST request
+    wp_remote_post( $webhook_url, [
+        'method' => 'POST',
+        'body'   => json_encode( $data ),
+        'headers' => [
+            'Content-Type' => 'application/json'
+        ],
+    ] );
+}
