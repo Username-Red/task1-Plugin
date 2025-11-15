@@ -81,3 +81,45 @@ function my_custom_plugin_custom_function() {
     error_log( 'My Custom Boilerplate Plugin is active!' );
 }
 add_action( 'init', 'my_custom_plugin_custom_function' );
+
+/**
+ * =========================
+ * GRAVITY FORMS AFTER SUBMISSION WEBHOOK
+ * =========================
+ */
+if ( class_exists( 'GFAPI' ) ) {
+    add_action( 'gform_after_submission', 'my_custom_plugin_send_form_to_webhook', 10, 2 );
+}
+
+function my_custom_plugin_send_form_to_webhook( $entry, $form ) {
+
+    // Optional: only run for a specific form
+    // if ( $form['id'] != 1 ) return;
+
+    // Convert entry data to array
+    $data = [];
+    foreach ( $form['fields'] as $field ) {
+        $field_id = $field->id;
+        $label = !empty($field->label) ? $field->label : 'Field ' . $field_id;
+        $value = rgar( $entry, $field_id );
+        $data[$label] = $value;
+    }
+
+    // Webhook URL (replace with your Webhook.site URL)
+    $webhook_url = 'https://webhook.site/48db2220-435a-433a-bc19-7dbd9f1cabf2';
+
+    // Send POST request
+    $response = wp_remote_post( $webhook_url, [
+        'method'  => 'POST',
+        'body'    => json_encode( $data ),
+        'headers' => ['Content-Type' => 'application/json'],
+        'timeout' => 10
+    ]);
+
+    // Optional: debug log success/failure
+    if ( is_wp_error( $response ) ) {
+        error_log( 'Webhook failed: ' . $response->get_error_message() );
+    } else {
+        error_log( 'Webhook sent successfully.' );
+    }
+}
