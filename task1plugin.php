@@ -53,7 +53,7 @@ function my_custom_plugin_enqueue_admin_assets() {
     // Admin CSS
     wp_enqueue_style(
         'my-custom-plugin-admin-styles',
-        $plugin_url . 'assets/css/my-custom-plugin-admin.css',
+        $plugin_url . 'assets/css/plugin-styles.css',
         array(),
         '1.0.0',
         'all'
@@ -62,7 +62,7 @@ function my_custom_plugin_enqueue_admin_assets() {
     // Admin JS
     wp_enqueue_script(
         'my-custom-plugin-admin-scripts',
-        $plugin_url . 'assets/js/my-custom-plugin-admin.js',
+        $plugin_url . 'assets/js/plugin-scripts.js',
         array( 'jquery' ),
         '1.0.0',
         true
