@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: My Custom Boilerplate Plugin
+ * Plugin Name: Basic Boilerplate Plugin
  * Plugin URI:  https://example.com/
  * Description: A custom plugin boilerplate for adding scripts, styles, and future functionality.
- * Version:     1.0.0
- * Author:      Your Name
+ * Version:     3.0.0
+ * Author:      Jared Greeff
  * Author URI:  https://example.com/
  * License:     GPL2
  * Text Domain: my-custom-plugin
