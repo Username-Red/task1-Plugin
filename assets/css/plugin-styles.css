@@ -1,4 +1,4 @@
 /* Frontend plugin CSS */
-body {
-    border: 2px solid red; /* Test style */
+.entry-content {
+    border: 2px solid cyan; /* Test style */
 }
