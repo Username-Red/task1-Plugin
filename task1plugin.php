@@ -24,8 +24,8 @@ function my_custom_plugin_enqueue_assets() {
 
     // Enqueue CSS
     wp_enqueue_style(
-        'my-custom-plugin-styles',
-        $plugin_url . 'assets/css/my-custom-plugin-styles.css',
+        'plugin-styles',
+        $plugin_url . 'assets/css/plugin-styles.css',
         array(),
         '1.0.0',
         'all'
@@ -33,8 +33,8 @@ function my_custom_plugin_enqueue_assets() {
 
     // Enqueue JavaScript
     wp_enqueue_script(
-        'my-custom-plugin-scripts',
-        $plugin_url . 'assets/js/my-custom-plugin-scripts.js',
+        'plugin-scripts',
+        $plugin_url . 'assets/js/plugin-scripts.js',
         array( 'jquery' ), // dependencies
         '1.0.0',
         true // load in footer
