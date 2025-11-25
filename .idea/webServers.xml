@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="40e1cbe5-4c2f-43ec-aae3-ac173ad46f7a" name="jared-greeff.sblik.local" url="http://localhost">
+        <fileTransfer mountedRoot="C:\Users\User\Local Sites\mywordpress-ba1e0e93d61939f14002-20251120133742\app\public\wp-content\plugins\task1plugin" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
