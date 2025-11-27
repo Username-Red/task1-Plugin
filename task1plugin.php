@@ -3,7 +3,7 @@
  * Plugin Name: Basic Boilerplate Plugin
  * Plugin URI:  https://example.com/
  * Description: A custom plugin boilerplate for adding scripts, styles, and future functionality.
- * Version:     3.0.5
+ * Version:     3.0.6
  * Author:      Jared Greeff
  * Author URI:  https://example.com/
  * License:     GPL2
